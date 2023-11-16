@@ -11,6 +11,7 @@ const sequelize = new Sequelize(
       native: false, // lets Sequelize know we can use pg-native for ~30% more speed
    }
 );
+new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/pokemon`);
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
