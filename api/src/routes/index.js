@@ -1,12 +1,12 @@
-const express = require('express');
-const router = express.Router();
+const { Router } = require('express');
+const pokemonsRouter = require('./pokemonRouter')
+const typeRouter = require('../routes/typeRouter')
 
-// Ruta principal
-router.get('/', (req, res) => {
-  res.send('¡Hola, mundo!');
-});
 
-// Otras rutas...
-// router.get('/otra-ruta', (req, res) => { /* ... */ });
+const router = Router();
+
+router.use('/pokemons', pokemonsRouter)
+router.use('/types', typeRouter)
+
 
 module.exports = router;
